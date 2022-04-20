@@ -23,7 +23,7 @@ namespace BasicRevision
 
             students.ForEach(x => {// loop as lampda exepration
                 Console.WriteLine($"Age: {x.Age}\n" +
-                    $"Name: {x.Name}");
+                    $"Name: {x.FirstName}");
             });
 
             Console.WriteLine($"Age avarage: {LINQOperators.StudentAgeAvarage()}");
@@ -36,18 +36,22 @@ namespace BasicRevision
 
             LINQOperators.TakeThree().ForEach(x =>// loop by lampda experation
             {
-                Console.WriteLine(x.Name);
+                Console.WriteLine(x.FirstName);
             });
 
             for (int i = 0; i < LINQOperators.TakeThree().Count; i++)// loop by for
             {
-                Console.WriteLine(LINQOperators.TakeThree()[i].Name);
+                Console.WriteLine(LINQOperators.TakeThree()[i].FirstName);
             }
 
             LINQOperators.SkipOne().ForEach(x =>
             {
-                Console.WriteLine(x.Id + "." + x.Name);
+                Console.WriteLine(x.Id + "." + x.FirstName);
             });
+            Student st = new Student(16) { FirstName = "Khalil", LastName = "ElBor3y" };
+            Console.WriteLine($"Gender {st.GenderName} Age={st.Age} Is adult {st.IsAdult}");
+
+            
         }
     }
 }
